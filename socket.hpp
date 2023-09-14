@@ -270,10 +270,10 @@ inline Socket_guard make_socket(const int domain, const int type,
   const int protocol)
 {
   net::Socket_guard result{::socket(domain, type, protocol)};
-  if (net::is_socket_valid(result))
-    return result;
+  if (!net::is_socket_valid(result))
+    throw DMITIGR_NET_EXCEPTION{errno, "cannot create a socket"};
   else
-    throw DMITIGR_NET_EXCEPTION{"cannot create a socket"};
+    return result;
 }
 
 /// @overload
@@ -286,7 +286,8 @@ inline Socket_guard make_socket(const Protocol_family family, const int type,
 /// @returns Newly created TCP socket.
 inline Socket_guard make_tcp_socket(const Protocol_family family)
 {
-  return make_socket(family, SOCK_STREAM, IPPROTO_TCP);
+  return make_socket(family, SOCK_STREAM,
+    family != Protocol_family::local ? IPPROTO_TCP : 0);
 }
 
 /// Binds `socket` to `addr`.

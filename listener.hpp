@@ -259,7 +259,7 @@ public:
 
     const auto uds_create_bind = [&]
     {
-      socket_ = make_socket(AF_UNIX, SOCK_STREAM, IPPROTO_TCP);
+      socket_ = make_socket(AF_UNIX, SOCK_STREAM, 0);
       bind_socket(socket_, {eid.uds_path().value()});
     };
 
