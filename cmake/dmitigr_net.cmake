@@ -47,7 +47,7 @@ set(dmitigr_net_implementations
 # Dependencies
 # ------------------------------------------------------------------------------
 
-set(dmitigr_libs_net_deps base fsx os)
+set(dmitigr_libs_net_deps base os)
 
 if (WIN32)
   if (CMAKE_SYSTEM_NAME MATCHES MSYS|MinGW|Cygwin AND CMAKE_CXX_COMPILER_ID MATCHES GNU|Clang)
