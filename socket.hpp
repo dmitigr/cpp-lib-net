@@ -17,7 +17,7 @@
 #ifndef DMITIGR_NET_SOCKET_HPP
 #define DMITIGR_NET_SOCKET_HPP
 
-#include "../base/enum_bitmask.hpp"
+#include "../base/enum.hpp"
 #include "address.hpp"
 #include "exceptions.hpp"
 #include "last_error.hpp"
