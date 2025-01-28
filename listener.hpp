@@ -18,7 +18,6 @@
 #define DMITIGR_NET_LISTENER_HPP
 
 #include "../base/assert.hpp"
-#include "../base/fsx.hpp"
 #include "address.hpp"
 #include "descriptor.hpp"
 #include "endpoint.hpp"
@@ -27,6 +26,7 @@
 #include "types_fwd.hpp"
 
 #include <chrono>
+#include <filesystem>
 #include <memory>
 #include <optional>
 #include <string>

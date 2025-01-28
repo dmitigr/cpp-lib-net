@@ -18,11 +18,11 @@
 #define DMITIGR_NET_ADDRESS_HPP
 
 #include "../base/assert.hpp"
-#include "../base/fsx.hpp"
 #include "exceptions.hpp"
 
 #include <algorithm>
 #include <cstring>
+#include <filesystem>
 #include <limits>
 #include <string>
 #include <system_error>
